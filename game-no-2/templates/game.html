@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <title>The NCSSM Class of 1984 Yearbook Game</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link rel="stylesheet" href="static/css/styles.css">
+
+</head>
+<body>
+    <h1>How Well Do You Remember Your Classmates?</h1>
+    <p>Click on the picture that represents: <span class="student-name"> {{ correct_name }} </span></p>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <div class="image-grid">
+        {% for student in students %}
+        <form method="post" action="{{ url_for('game') }}">
+            <input type="hidden" name="guess" value="{{ student['Image'] }}">
+            <button type="submit">
+                <img src="static/images/{{ student['Image'] }}">
+            </button>
+        </form>
+        {% endfor %}
+    </div>
+</body>
+</html>

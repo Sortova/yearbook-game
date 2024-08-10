@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Name</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Guess the Name</h1>
+    <p>Turns left: {{ session.turns_left }}</p>
+    <img src="{{ url_for('static', filename='images/' + image_name) }}" alt="Random Image">
+    <form action="{{ url_for('check') }}" method="post">
+        {% for name in name_options %}
+            <input type="radio" id="{{ name }}" name="name" value="{{ name }}" required>
+            <label for="{{ name }}">{{ name }}</label><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

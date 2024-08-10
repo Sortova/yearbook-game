@@ -1,0 +1,93 @@
+/* Import the font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Apply the font to the body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    height: 100%;
+    background-image: url("/static/images/questionmarks.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Style the game container */
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Style the game title */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Style the student images */
+.student-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.image-grid img {
+    max-width: 400px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.student-name {
+    font-size: 2.5rem; /* Increase the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    color: #346094; /* Change the text color to blue */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for depth */
+    margin: 30px 0; /* Add some vertical spacing */
+    animation: pulse 2s infinite; /* Add a pulsing animation */
+}
+
+/* Keyframes for the pulsing animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

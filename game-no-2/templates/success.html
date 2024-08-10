@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You Guessed the Student</title>
+    <link rel="icon" type="image/png" href="static/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <h1>Congratulations!</h1>
+    <p>You guessed correctly. The student's name is {{ correct_name }}.</p>
+    <img style="display: block; margin-left: auto; margin-right: auto; width: 400px" src="/static/images/{{correct_image}} " />
+    <br />
+    <div style="text-align:center"><a  style="font-size:2em; padding: 1px 6px; border: 1px outset buttonborder; border-radius: 3px; color: buttontext; background-color: buttonface; text-decoration: none;" href="{{ url_for('game') }}">Play Again</a></div>
+</body>
+</html>
